@@ -246,6 +246,7 @@ Top Products Material, Type, Style by Quantity
 ![Alt text](Top Type quantity.jpg)
 ![Alt text](Top Style Quantity.jpg)
 
+Weekly Sales Plot
 
 
 
