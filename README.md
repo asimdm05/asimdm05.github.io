@@ -2,9 +2,9 @@
 
 ### Education
 The University of Arizona, Eller College of Management
-Major: Finance and Management Information Systems | May 2027
-GPA: 4.0
-Honors/Awards: Global Wildcat Scholarship Award, Highest Academic Distinction
+- Major: Finance and Management Information Systems | May 2027
+- GPA: 4.0
+- Honors/Awards: Global Wildcat Scholarship Award, Highest Academic Distinction
 
 ### Work Experience
 Student Finance Specialist @ University of Arizona, Finance Strategy & Solutions | April 2024 – Present
