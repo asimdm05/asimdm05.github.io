@@ -239,6 +239,20 @@ plt.show()
 # identify which styles could be scaled down due to lower sales performance.
 
 ```
+# Results
+
+Top Products Material, Type, Style by Quantity
+![Alt text](Top Material Quantity.jpg)
+![Alt text](Top Type quantity.jpg)
+![Alt text](Top Style Quantity.jpg)
+
+
+
+
+
+
+
+
 
 Ski Sales Analysis: Data Wrangling, Visualization, and Trend Forecasting
 ```py
