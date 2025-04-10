@@ -238,5 +238,148 @@ plt.show()
 
 ```
 
+Ski Sales Analysis: Data Wrangling, Visualization, and Trend Forecasting
+```py
+# =====================================
+# 1. Import Libraries
+# =====================================
+import os
+import io
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from plotnine import (
+    ggplot, aes, geom_col, geom_line, geom_smooth, facet_wrap,
+    scale_y_continuous, scale_x_datetime, labs, theme_minimal,
+    expand_limits
+)
+from mizani.breaks import date_breaks
+from mizani.formatters import date_format, currency_format
+
+# =====================================
+# 2. Upload & Load Data
+# =====================================
+from google.colab import files
+uploaded = files.upload()
+
+skis_df = pd.read_excel("/content/skis.xlsx")
+orderlines_df = pd.read_excel("/content/orderlines_skis.xlsx")
+skishop_df = pd.read_excel("/content/skishops.xlsx")
+
+# =====================================
+# 3. Quick Look at Data
+# =====================================
+print(skis_df.head())
+print(orderlines_df.head())
+print(skishop_df.head())
+
+# =====================================
+# 4. Top Ski Models by Description
+# =====================================
+top3_ski_series = skis_df['description'].value_counts().nlargest(3)
+top3_ski_series.plot(kind="barh", title="Top 3 Ski Descriptions")
+plt.show()
+
+# =====================================
+# 5. Join DataFrames
+# =====================================
+ski_orderlines_joined_df = (
+    orderlines_df.drop(columns='Unnamed: 0', errors='ignore')
+    .merge(skis_df, how="left", left_on="product.id", right_on="ski.id")
+    .merge(skishop_df, how="left", left_on="customer.id", right_on="skishop.id")
+)
+ski_orderlines_joined_df.info()
+
+# =====================================
+# 6. Data Wrangling
+# =====================================
+df = ski_orderlines_joined_df.copy()
+
+# Split 'description' into 'Type' and 'Level'
+df[['Type', 'Level']] = df['description'].str.split('-', expand=True)
+
+# Extract 'City' and 'State' from 'location'
+location_split = df['location'].str.split(',', expand=True)
+df['City'] = location_split[0]
+df['State'] = location_split[1]  # Previously duplicated
+
+# Calculate total revenue
+df['total_revenue'] = df['price'] * df['quantity']
+
+# Keep relevant columns
+cols_to_keep = [
+    'order.id', 'order.line', 'order.date', 'ski.id', 'model', 'description',
+    'price', 'skishop.name', 'location', 'Type', 'Level', 'City', 'total_revenue'
+]
+df = df[cols_to_keep].copy()
+
+# Rename columns (replace '.' with '_')
+df.columns = df.columns.str.replace(".", "_", regex=False)
+df.info()
+
+# Save wrangled data
+os.makedirs("data_wrangled", exist_ok=True)
+df.to_pickle("data_wrangled/ski_orderlines_wrangled_df.pkl")
+
+# =====================================
+# 7. Time Series Analysis
+# =====================================
+df = pd.read_pickle("data_wrangled/ski_orderlines_wrangled_df.pkl")
+
+# Monthly revenue
+sales_month_df = (
+    df[['order_date', 'total_revenue']]
+    .set_index('order_date')
+    .resample('MS')
+    .sum()
+    .reset_index()
+)
+
+# Quick plot
+sales_month_df.plot(x='order_date', y='total_revenue', title="Monthly Revenue")
+plt.show()
+
+# =====================================
+# 8. Plot Revenue Trend (LOWESS)
+# =====================================
+usd = currency_format(prefix="$", precision=0, big_mark=",")
+
+(
+    ggplot(sales_month_df, aes(x='order_date', y='total_revenue')) +
+    geom_line() +
+    geom_smooth(method='lowess', color='blue', span=0.3) +
+    scale_y_continuous(labels=usd) +
+    labs(title='Revenue by Month', x='', y='Revenue') +
+    theme_minimal() +
+    expand_limits(y=0)
+)
+
+# =====================================
+# 9. Weekly Sales by Skill Level
+# =====================================
+sales_by_level_week = (
+    df[['Level', 'order_date', 'total_revenue']]
+    .set_index('order_date')
+    .groupby('Level')
+    .resample('W')
+    .sum()
+    .drop(columns='Level')
+    .reset_index()
+)
+
+# Pivot and plot
+pivot_df = (
+    sales_by_level_week
+    .pivot(index='order_date', columns='Level', values='total_revenue')
+    .fillna(0)
+)
+
+pivot_df.plot(kind='line', subplots=True, layout=(3, 1), figsize=(10, 8), title="Weekly Sales by Level")
+plt.tight_layout()
+plt.show()
+
+```
+
 ###Tableu Projects
 
