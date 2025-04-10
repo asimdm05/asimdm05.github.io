@@ -30,6 +30,9 @@ Development Strategy Intern @ Made in Korea (MIKO) | June 2022 – August 2023
 - Managed and implemented major marketing events resulting in an increased conversion rate by 25%.
 - Established local production and supply chain system by increasing 10% sales.
 
+### Tableu Projects
+https://public.tableau.com/app/profile/andrei.sim/vizzes 
+
 ### Python Projects
 Wayfair Sales & Product Trends Analysis
 
@@ -379,5 +382,4 @@ plt.show()
 
 ```
 
-###Tableu Projects
-https://public.tableau.com/app/profile/andrei.sim/vizzes 
+
