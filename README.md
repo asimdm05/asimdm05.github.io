@@ -407,4 +407,13 @@ plt.show()
 
 ```
 
+## Results
 
+Top 5 Bikes based on description
+![Alt text](Top 5 Description.jpg)
+
+Revenue by Month
+![Alt text](Revenue by Month.jpg)
+
+Sales by Category and Week
+![Alt text](Sales by Category and Week.jpg)
