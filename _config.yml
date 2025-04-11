@@ -4,4 +4,4 @@ logo : DSC_1673 copy.jpg
 #description: text below image
 #show_downloads: true
 #theme: jekyll-theme-minimal
-theme: jekyll-theme-so-simple
+gem "github-pages", group: :jekyll_plugins
