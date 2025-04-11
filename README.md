@@ -247,12 +247,19 @@ Top Products Material, Type, Style by Quantity
 ![Alt text](Top Style Quantity.jpg)
 
 Weekly Sales Plot
+![Alt text](Total Sales by Week.jpg)
 
+Quarterly sales plot
+![Alt text](Average total sales by quarter.jpg)
 
+Weekly revenue graph
+![Alt text](Revenue by Week.jpg)
 
+Divided Total Sales by style per Quarter
+![Alt text](Divided Total Sales by style per Quarter.jpg)
 
-
-
+Joined Total Sales by style per Quarter
+![Alt text](Joined Total Sales by style per Quarter.jpg)
 
 
 
