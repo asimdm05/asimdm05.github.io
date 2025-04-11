@@ -350,9 +350,7 @@ plt.tight_layout()
 plt.show()
 {% endhighlight %}
 </div>
-
-
-
+'
 ### Results
 
 Top 5 Bikes based on description
