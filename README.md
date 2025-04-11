@@ -209,9 +209,7 @@ In my opinion, this plot is easier to read and more practical for strategic busi
 #### Ski Sales Analysis: Data Wrangling, Visualization, and Trend Forecasting
 <div style="max-height: 500px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8; border-radius: 6px;">
 {% highlight python %}
-<div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
-  <pre>
-    <code>
+
 # =====================================
 # 1. Import Libraries
 # =====================================
@@ -352,6 +350,8 @@ plt.tight_layout()
 plt.show()
 {% endhighlight %}
 </div>
+
+
 
 ### Results
 
