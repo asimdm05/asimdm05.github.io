@@ -1,5 +1,10 @@
 title: Andrei Sim
 logo : DSC_1673 copy.jpg
+
+header_pages:
+  - readme.md
+  - python.md
+
 #description: text below image
 #show_downloads: true
 theme: jekyll-theme-minimal
