@@ -3,6 +3,5 @@ logo : DSC_1673 copy.jpg
 
 #description: text below image
 #show_downloads: true
-#theme: jekyll-theme-minimal
-gem "github-pages", group: :jekyll_plugins
-remote_theme: "mmistakes/so-simple-theme@3.2.0"
+theme: jekyll-theme-minimal
+
