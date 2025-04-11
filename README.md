@@ -38,9 +38,8 @@ Development Strategy Intern @ Made in Korea (MIKO) | June 2022 – August 2023
 
 ### Python Projects
 #### Wayfair Sales & Product Trends Analysis
-<div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
-  <pre>
-    <code>
+<div style="max-height: 500px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8; border-radius: 6px;">
+{% highlight python %}
 # --- Imports ---
 import os
 import io
@@ -76,22 +75,12 @@ print(orderline_joined_df)
 
 # --- Data Wrangling ---
 df = orderline_joined_df.copy()
-
-# Split product.info into Type and Style
 temp_df = df['product.info'].str.split('-', expand=True)
 df['Type'] = temp_df[0]
 df['Style'] = temp_df[1]
-
-# Drop unnecessary column
 df.drop(columns='shop.id', inplace=True)
-
-# Clean column names
 df.columns = df.columns.str.replace(".", "_")
-
-# Add total_sales column
 df['total_sales'] = df['price'] * df['quantity']
-
-# Get top 10 sales orders
 top_10_orders = df.sort_values('total_sales', ascending=False).head(10)
 print(top_10_orders)
 
@@ -104,7 +93,6 @@ m = product_df['material']
 material_frequency_series = m.value_counts()
 material_frequency_series.nlargest(5)
 
-# --- Creating horizontal descending bar chart ---
 top5_material = product_df['material'].value_counts().nlargest(5).sort_values(ascending=True)
 fig1 = top5_material.plot(kind="barh", title="Top 5 Materials")
 plt.show()
@@ -150,16 +138,10 @@ sales_week = (
     .reset_index()
 )
 
-# Step 2 - visualize
-# simple plot
 sales_week.set_index('order_date').plot(
     kind='line', subplots=True, layout=(1, 1), figsize=(10, 5)
 )
 plt.show()
-
-# Based on the weekly sales plot,
-# we can observe that volatility decreased and the mean sales level increased. 
-# The highest and lowest total sales occurred in November.
 
 # --- Quarterly Price Analysis ---
 price_quarter_df = (
@@ -170,16 +152,10 @@ price_quarter_df = (
     .reset_index()
 )
 
-# Visualize
-# simple plot
 price_quarter_df.set_index('order_date').plot(
     kind='line', subplots=True, layout=(1, 1), figsize=(10, 5)
 )
 plt.show()
-
-# Based on the quarterly sales plot, 
-# we can see that average total sales increased by the last quarter. 
-# The year 2023 started with a drop in sales.
 
 # --- ggplot Visualization for Weekly Revenue ---
 !pip install scikit-misc
@@ -194,11 +170,6 @@ labs(title='Revenue by Week', x='Date', y='Revenue') + \
 theme_minimal() + \
 expand_limits(y=0)
 
-# Based on the weekly revenue graph,
-# revenue started to rise from May 1st onward.
-# There was also high volatility in November. 
-# Black Friday sales influenced rise of the furniture.
-
 # --- Sales by Style per Quarter ---
 sales_by_quarter_Style = (
     df[['Style', 'order_date', 'total_sales']]
@@ -210,7 +181,6 @@ sales_by_quarter_Style = (
     .reset_index()
 )
 
-# simple plot
 df_pivot = sales_by_quarter_Style.pivot(
     index='order_date',
     columns='Style',
@@ -221,12 +191,6 @@ df_pivot.plot(kind='line', subplots=True, layout=(5, 1), figsize=(15, 15))
 plt.tight_layout()
 plt.show()
 
-# Based on the graphs of sales by furniture style,
-# the Black Friday trend is evident due to the simultaneous rise and fall in sales across styles.
-# Scandinavian furniture had the highest total sales.
-# Traditional and Mid style had the lowest compared to others.
-
-# --- Final Grouped Plot for Strategic Planning ---
 df_pivot.plot(kind='line', figsize=(15, 7))
 plt.title("Total Sales by Style per Quarter")
 plt.ylabel("Total Sales")
@@ -235,14 +199,7 @@ plt.grid(True)
 plt.legend(title='Style', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
-
-# In my opinion, this plot is easier to read and more practical for strategic business planning
-# due to the grouping by sales. Based on this, the business could consider focusing more 
-# on Scandinavian-style furniture to increase revenue. Additionally, the graph helps 
-# identify which styles could be scaled down due to lower sales performance.
-
-    </code>
-  </pre>
+{% endhighlight %}
 </div>
 
 
