@@ -41,7 +41,6 @@ Wayfair Sales & Product Trends Analysis
 <div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
   <pre>
     <code>
-```py
 # --- Imports ---
 import os
 import io
@@ -241,40 +240,40 @@ plt.show()
 # due to the grouping by sales. Based on this, the business could consider focusing more 
 # on Scandinavian-style furniture to increase revenue. Additionally, the graph helps 
 # identify which styles could be scaled down due to lower sales performance.
-```
+
     </code>
   </pre>
 </div>
 
 
-## Results
+### Results
 
-## Top Products Material, Type, Style by Quantity
+Top Products Material, Type, Style by Quantity
 ![Alt text](Top Material Quantity.jpg)
 ![Alt text](Top Type quantity.jpg)
 ![Alt text](Top Style Quantity.jpg)
 
-## Weekly Sales Plot
+Weekly Sales Plot
 Based on the weekly sales plot, we can observe that volatility decreased and the mean sales level increased. The highest and lowest total sales occurred in November.
 
 ![Alt text](Total Sales by Week.jpg)
 
-## Quarterly sales plot
+Quarterly sales plot
 Based on the quarterly sales plot, we can see that average total sales increased by the last quarter. The year 2023 started with a drop in sales.
 
 ![Alt text](Average total sales by quarter.jpg)
 
-## Weekly revenue graph
+Weekly revenue graph
 Based on the weekly revenue graph, revenue started to rise from May 1st onward. There was also high volatility in November. Black friday sales influenced rise of the furniture
 
 ![Alt text](Revenue by Week.jpg)
 
-## Divided Total Sales by style per Quarter
+Divided Total Sales by style per Quarter
 Based on the graphs of sales by furniture style, the Black Friday trend is evident due to the simultaneous rise and fall in sales across styles. Scandinavian furniture had the highest total sales. Traditional and Mid style had the lowest compared to others.
 
 ![Alt text](Divided Total Sales by style per Quarter.jpg)
 
-## Joined Total Sales by style per Quarter
+Joined Total Sales by style per Quarter
 In my opinion, this plot is easier to read and more practical for strategic business planning due to the grouping by sales. Based on this, the business could consider focusing more on Scandinavian-style furniture to increase revenue. Additionally, the graph helps identify which styles could be scaled down due to lower sales performance.
 
 ![Alt text](Joined Total Sales by style per Quarter.jpg)
