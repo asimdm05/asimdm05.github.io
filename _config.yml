@@ -5,6 +5,12 @@ header_pages:
   - README.md
   - python.md
 
+---
+layout: page
+title: Python Projects
+permalink: /python/
+---
+
 #description: text below image
 #show_downloads: true
 theme: jekyll-theme-minimal
