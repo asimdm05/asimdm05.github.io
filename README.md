@@ -37,7 +37,7 @@ Development Strategy Intern @ Made in Korea (MIKO) | June 2022 – August 2023
 
 
 ### Python Projects
-Wayfair Sales & Product Trends Analysis
+#### Wayfair Sales & Product Trends Analysis
 <div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
   <pre>
     <code>
@@ -281,8 +281,11 @@ In my opinion, this plot is easier to read and more practical for strategic busi
 
 
 
-Ski Sales Analysis: Data Wrangling, Visualization, and Trend Forecasting
-```py
+#### Ski Sales Analysis: Data Wrangling, Visualization, and Trend Forecasting
+
+<div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
+  <pre>
+    <code>
 # =====================================
 # 1. Import Libraries
 # =====================================
@@ -422,9 +425,12 @@ pivot_df.plot(kind='line', subplots=True, layout=(3, 1), figsize=(10, 8), title=
 plt.tight_layout()
 plt.show()
 
-```
+    </code>
+  </pre>
+</div>
 
-## Results
+
+### Results
 
 Top 5 Bikes based on description
 ![Alt text](Top 5 Description.jpg)
