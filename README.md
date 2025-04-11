@@ -39,7 +39,7 @@ Wayfair Sales & Product Trends Analysis
 <div style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8;">
   <pre>
     <code>
-
+```py
 # --- Imports ---
 import os
 import io
@@ -239,16 +239,11 @@ plt.show()
 # due to the grouping by sales. Based on this, the business could consider focusing more 
 # on Scandinavian-style furniture to increase revenue. Additionally, the graph helps 
 # identify which styles could be scaled down due to lower sales performance.
-
-     # Sample Python code
-      def hello_world():
-          print("Hello, world!")
-
-      for i in range(10):
-          hello_world()
+```
     </code>
   </pre>
 </div>
+
 
 ## Results
 
