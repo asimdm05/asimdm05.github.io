@@ -5,7 +5,7 @@
 
 
 ### Python Projects
-#### Wayfair Sales & Product Trends Analysis
+#### <span style="color:green;">Wayfair Sales & Product Trends Analysis</span>
 <div style="max-height: 500px; overflow: auto; border: 1px solid #ccc; padding: 10px; background: #f8f8f8; border-radius: 6px;">
 {% highlight python %}
 # --- Imports ---
